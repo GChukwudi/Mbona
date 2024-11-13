@@ -42,14 +42,47 @@ class _HomeState extends State<Home> {
       body: Stack(children: <Widget>[
         Container(
           decoration: const BoxDecoration(
-              gradient: LinearGradient(
-            colors: <Color>[
-              Color(0xfff6c85b),
-              Color(0xffffffff),
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.center,
-          )),
+            gradient: LinearGradient(
+              colors: <Color>[
+                Color(0xff44588e),
+                Color(0xffffffff),
+              ],
+            ),
+          ),
+        ),
+        Center(
+          child: locationData == null
+              ? const CircularProgressIndicator()
+              : Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      const Text(
+                        'Where am I?',
+                        style: TextStyle(
+                          fontSize: 28,
+                          color: Color.fromARGB(255, 15, 20, 14),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 40),
+                      Row(
+                        children: [
+                          const Icon(Icons.location_on),
+                          Text(
+                            locationData!.city,
+                            style: const TextStyle(
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 15, 20, 14),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
         ),
       ]),
     );

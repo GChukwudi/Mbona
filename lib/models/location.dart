@@ -1,28 +1,25 @@
 class LocationData {
-  double latitude;
-  double longitude;
-  String street;
+  String ip = '';
   String city;
+  String region;
   String country;
-  String neighborhood;
+  String flagUrl;
 
   LocationData({
-    required this.latitude,
-    required this.longitude,
-    required this.street,
-    required this.neighborhood,
+    required this.ip,
     required this.city,
+    required this.region,
     required this.country,
+    required this.flagUrl,
   });
 
   factory LocationData.fromJson(Map<String, dynamic> json) {
     return LocationData(
-      longitude: json['longitude'] ?? 0.0,
-      latitude: json['latitude'] ?? 0.0,
-      street: json['street'] ?? '',
-      neighborhood: json['neighborhood'] ?? 'unknown',
+      ip: json['ip'] ?? 'unknown',
       city: json['city'] ?? 'unknown',
+      region: json['region'] ?? 'unknown',
       country: json['country'] ?? 'unknown',
+      flagUrl: json['flag'] ?? 'unknown',
     );
   }
 }
