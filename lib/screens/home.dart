@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
           child: locationData == null
               ? const CircularProgressIndicator()
               : Padding(
-                  padding: const EdgeInsets.all(30.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
                       const SizedBox(height: 40),
                       Row(
                         children: [
-                          const Icon(Icons.location_on),
+                          const Icon(Icons.location_on_outlined),
                           Text(
                             locationData!.city,
                             style: const TextStyle(
@@ -79,6 +79,14 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                         ],
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        locationData!.region,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          color: Color.fromARGB(255, 15, 20, 14),
+                        ),
                       ),
                     ],
                   ),

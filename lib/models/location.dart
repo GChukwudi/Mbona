@@ -17,7 +17,7 @@ class LocationData {
     return LocationData(
       ip: json['ip'] ?? 'unknown',
       city: json['city'] ?? 'unknown',
-      region: json['region'] ?? 'unknown',
+      region: json['region_name'] ?? 'unknown',
       country: json['country'] ?? 'unknown',
       flagUrl: json['flag'] ?? 'unknown',
     );
