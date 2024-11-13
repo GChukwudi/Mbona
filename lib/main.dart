@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:mbona/screens/home.dart';
 
 void main() async {
   await dotenv.load();
@@ -12,6 +13,16 @@ class Mbano extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      title: 'Mbano',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const Home(),
+      routes: {
+        // '/home': (context) => const Home(),
+        // '/about': (context) => const About(),
+      },
+    );
   }
 }

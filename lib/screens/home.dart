@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../models/location.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -12,14 +13,33 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   LocationData? locationData;
-  bool isLoading = false;
 
-  Future<void> getLocation() async {
-    setState(() {
-      isLoading = true;
-    });
+  Future<void> fetchLocation() async {
+    final apiKey = dotenv.env['API_KEY'];
+    final response = await http.get(
+      Uri.parse('http://api.ipstack.com/check?access_key=$apiKey'),
+    );
 
-    final response = await http.get(Uri.parse(
-        'http://api.ipstack.com/check?access_key=307f40de9406bf862c90ed56681ed7b5'));
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      setState(() {
+        locationData = LocationData.fromJson(data);
+      });
+    } else {
+      throw Exception('Failed to load location data');
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchLocation();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(),
+    );
   }
 }
