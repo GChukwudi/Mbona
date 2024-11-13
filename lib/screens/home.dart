@@ -38,8 +38,20 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(),
+    return Scaffold(
+      body: Stack(children: <Widget>[
+        Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+            colors: <Color>[
+              Color(0xfff6c85b),
+              Color(0xffffffff),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.center,
+          )),
+        ),
+      ]),
     );
   }
 }
