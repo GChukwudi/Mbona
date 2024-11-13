@@ -19,7 +19,7 @@ class Mbano extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const Home(),
-      routes: {
+      routes: const {
         // '/home': (context) => const Home(),
         // '/about': (context) => const About(),
       },
