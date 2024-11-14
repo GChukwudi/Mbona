@@ -13,6 +13,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   LocationData? locationData;
+  String flagUrl = '';
 
   Future<void> fetchLocation() async {
     final apiKey = dotenv.env['API_KEY'];
@@ -21,10 +22,7 @@ class _HomeState extends State<Home> {
     );
 
     if (response.statusCode == 200) {
-      final data = json.decode(response.body);
-      setState(() {
-        locationData = LocationData.fromJson(data);
-      });
+      json.decode(response.body);
     } else {
       throw Exception('Failed to load location data');
     }
@@ -56,40 +54,42 @@ class _HomeState extends State<Home> {
               : Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      const Text(
-                        'Where am I?',
-                        style: TextStyle(
-                          fontSize: 28,
-                          color: Color.fromARGB(255, 15, 20, 14),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 40),
-                      Row(
-                        children: [
-                          const Icon(Icons.location_on_outlined),
-                          Text(
-                            locationData!.city,
-                            style: const TextStyle(
-                              fontSize: 20,
-                              color: Color.fromARGB(255, 15, 20, 14),
-                            ),
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        const Text(
+                          'Where am I?',
+                          style: TextStyle(
+                            fontSize: 28,
+                            color: Color.fromARGB(255, 15, 20, 14),
+                            fontWeight: FontWeight.bold,
                           ),
-                        ],
-                      ),
-                      const SizedBox(height: 10),
-                      Text(
-                        locationData!.region,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          color: Color.fromARGB(255, 15, 20, 14),
                         ),
-                      ),
-                    ],
-                  ),
+                        const SizedBox(height: 60),
+                        Text(
+                          locationData?.ip ?? 'unknown',
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 15, 20, 14),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Text(
+                          locationData?.city ?? 'unknown',
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 15, 20, 14),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Text(
+                          locationData?.country ?? 'unknown',
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 15, 20, 14),
+                          ),
+                        ),
+                      ]),
                 ),
         ),
       ]),

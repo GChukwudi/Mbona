@@ -19,7 +19,7 @@ class LocationData {
       city: json['city'] ?? 'unknown',
       region: json['region_name'] ?? 'unknown',
       country: json['country'] ?? 'unknown',
-      flagUrl: json['flag'] ?? 'unknown',
+      flagUrl: json['country_flag'] ?? 'unknown',
     );
   }
 }
