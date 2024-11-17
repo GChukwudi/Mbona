@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Explore()),
+              MaterialPageRoute(builder: (context) => const Explore()),
             );
           },
           child: const Text('Explore Nearby Places'),

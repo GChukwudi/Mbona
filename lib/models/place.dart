@@ -1,25 +1,25 @@
-class LocationData {
-  String ip = '';
-  String city;
-  String region;
-  String country;
-  String flagUrl;
+class Place {
+  final String id;
+  final String name;
+  final String address;
+  final String kinds;
+  final String? description;
 
-  LocationData({
-    required this.ip,
-    required this.city,
-    required this.region,
-    required this.country,
-    required this.flagUrl,
+  Place({
+    required this.id,
+    required this.name,
+    required this.address,
+    required this.kinds,
+    this.description,
   });
 
-  factory LocationData.fromJson(Map<String, dynamic> json) {
-    return LocationData(
-      ip: json['ip'] ?? 'unknown',
-      city: json['city'] ?? 'unknown',
-      region: json['region_name'] ?? 'unknown',
-      country: json['country'] ?? 'unknown',
-      flagUrl: json['country_flag'] ?? 'unknown',
+  factory Place.fromJson(Map<String, dynamic> json) {
+    return Place(
+      id: json['xid'],
+      name: json['name'],
+      address: json['street'] ?? '',
+      kinds: json['kinds'] ?? '',
+      description: json['wikipedia'] ?? '',
     );
   }
 }
