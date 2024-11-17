@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import '../models/location.dart';
+import '../models/place.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Home extends StatefulWidget {

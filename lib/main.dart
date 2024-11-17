@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:mbona/screens/home.dart';
+// import 'package:provider/places_provider.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async {
   await dotenv.load();
@@ -20,10 +22,6 @@ class Mbano extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const Home(),
-      routes: const {
-        // '/home': (context) => const Home(),
-        // '/about': (context) => const About(),
-      },
     );
   }
 }
