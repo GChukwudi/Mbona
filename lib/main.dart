@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mbona/screens/home.dart';
 import 'providers/places_provider.dart';
 import 'package:provider/provider.dart';
@@ -24,6 +25,7 @@ class Mbano extends StatelessWidget {
         title: 'Mbano',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          textTheme: GoogleFonts.robotoTextTheme(),
         ),
         home: const Home(),
       ),
