@@ -26,16 +26,6 @@ class ScreenDetails extends StatelessWidget {
               place.address,
               style: const TextStyle(fontSize: 16),
             ),
-            const SizedBox(height: 8),
-            // Text(
-            //   'Category: ${place.kinds}',
-            //   style: const TextStyle(fontSize: 14),
-            // ),
-            // const SizedBox(height: 8),
-            // Text(
-            //   place.description ?? 'No description available',
-            //   style: const TextStyle(fontSize: 14),
-            // ),
           ],
         ),
       ),

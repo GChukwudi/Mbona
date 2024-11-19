@@ -50,6 +50,7 @@ class PlacesProvider with ChangeNotifier {
         );
         notifyListeners();
       } catch (e) {
+        // ignore: avoid_print
         print('Error fetching places: $e');
       }
     } else {
