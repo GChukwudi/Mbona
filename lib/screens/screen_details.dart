@@ -14,27 +14,30 @@ class ScreenDetails extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text(
-            place.name,
-            style: const TextStyle(),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            place.address,
-            style: const TextStyle(),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            'Category: ${place.kinds}',
-            style: const TextStyle(),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            place.description ?? 'No description available',
-            style: const TextStyle(),
-          )
-        ]),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              place.name,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              place.address,
+              style: const TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 8),
+            // Text(
+            //   'Category: ${place.kinds}',
+            //   style: const TextStyle(fontSize: 14),
+            // ),
+            // const SizedBox(height: 8),
+            // Text(
+            //   place.description ?? 'No description available',
+            //   style: const TextStyle(fontSize: 14),
+            // ),
+          ],
+        ),
       ),
     );
   }
