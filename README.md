@@ -1,16 +1,30 @@
-# mbona
+# Mbona - Discover Nearby Places
 
-A new Flutter project.
+Mbona is a Flutter app that helps users explore their current location, showing nearby landmarks, and interesting places.
 
-## Getting Started
+## Features
+- Displays user's current location.
+- Shows a list of nearby landmarks using the OpenTripMap API.
+- Provides detailed information about selected places.
 
-This project is a starting point for a Flutter application.
+## Setup Instructions
+1. Clone this repository:
+git clone https://github.com/GChukwudi/mbona.git
 
-A few resources to get you started if this is your first Flutter project:
+2. Navigate to the project directory:
+```
+cd mbona
+```
+3. Install dependencies:
+```
+flutter pub get
+```
+4. Replace `API_KEY` in `.env` with your OpenTripMap API key.
+5. Run the app:
+flutter run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## API Used
+- **OpenTripMap API**: Provides data on landmarks and attractions.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Demo Video
+[Link to Demo Video](#)
